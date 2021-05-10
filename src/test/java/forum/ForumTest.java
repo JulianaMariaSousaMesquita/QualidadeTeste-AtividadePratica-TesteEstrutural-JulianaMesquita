@@ -44,7 +44,7 @@ class ForumTest {
 		
 	@Test
 	public void testToString() {
-		String toString = "Forum[activated: \"" + forum1.isActivated() + "\", #entries: \"" + forum1.getEntries().size() + "\", #comments: \"" + 1 + "\"]";		
+		String toString = "Forum[activated: \"" + forum1.isActivated() + "\", #entries: \"" + forum1.getEntries().size() + "\", #comments: \"" + 0 + "\"]";		
 		assertEquals(this.forum1.toString(), toString);
 	}
 
