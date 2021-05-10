@@ -60,7 +60,7 @@ class SessionTest {
 	public void testDate() {
 		assertNotNull(this.session1.getDate());
 		long date = (long) 10052021;
-		this.user.setDate(date);
+		this.session1.setDate(date);
 		assertEquals(this.session1.getDate(),date);
 	}
 	
