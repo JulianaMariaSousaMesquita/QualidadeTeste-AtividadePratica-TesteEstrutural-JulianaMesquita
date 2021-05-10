@@ -88,6 +88,6 @@ class SessionTest {
 	@Test
 	public void testToString() {
 		String session2 = "Session[title: \"" + this.session1.getTitle() + "\", description: \"" + this.session1.getDescription() + "\", date: \"" + this.session1.getDate() + "\"]";
-		assertEquals(this.session1, session2);
+		assertEquals(this.session1.toString(), session2);
 	}
 }
