@@ -90,14 +90,7 @@ class FileTest {
 	}
 	
 	@Test
-	public void testToString() {
-		
-		
-		String toString = "File[name: \"file3_video.mp4\", id: \"arquivo de video - file 3\", link: \"www.fullteaching/file3.mp4\", indexOrder: 0]";
-		assertNotNull(this.file3.getIndexOrder());
-		this.file3.setIndexOrder(0);
-		assertEquals(this.file3.toString(), toString);	
-		
+	public void testToString() {		
 		String toString = "File[name: \"" + this.file1.getName() + "\", id: \"" + this.file1.getNameIdent() + "\", link: \"" + this.file1.getLink()+ ", indexOrder: " + this.file1.getIndexOrder() + "]";
 		assertEquals(this.file1.toString(), toString);
 	}
