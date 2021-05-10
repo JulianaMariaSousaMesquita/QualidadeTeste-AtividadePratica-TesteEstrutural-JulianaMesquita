@@ -46,11 +46,11 @@ class CourseTest {
 	}
 
 	@Test
-	public void testId() {
-		long id = 123;
-		assertNull(course_programacao.getId());
-		course_programacao.setId(id);
-		assertEquals(course_programacao.getId(),id);
+	public void testId() {		
+		assertNotNull(this.course_qualidade_teste.getId());
+		long id = 0500000;
+		this.course_qualidade_teste.setId(id);		
+		assertEquals(this.course_qualidade_teste.getId(), id);
 	}
 	
 	@Test
@@ -59,11 +59,11 @@ class CourseTest {
 	}
 	
 	@Test
-	public void testImage() {		
-		assertEquals(course_qualidade_teste.getImage(),"quali.jpg");
-		assertEquals(course_qualidade_teste.getImage(),"prog.jpg");
-		assertEquals(course_programacao.getImage(),"prog.jpg");
-		assertEquals(course_programacao.getImage(),"quali.jpg");
+	public void testImage() {	
+		assertNotNull(this.course_qualidade_teste.getImage());
+		String image = "quali.jpg";
+		this.course_qualidade_teste.setImage(image);		
+		assertEquals(this.course_qualidade_teste.getImage(), image);
 	}
 	
 	@Test
@@ -73,7 +73,10 @@ class CourseTest {
 	
 	@Test
 	public void testCourseDetails() {	
-		assertEquals(course_qualidade_teste.getCourseDetails(),course_programacao.getCourseDetails());
+		assertNotNull(this.course_programacao.getCourseDetails());
+		CourseDetails details = courseDetails;
+		this.course_qualidade_teste.setCourseDetails(details);		
+		assertEquals(this.course_qualidade_teste.getCourseDetails(), details);
 	}
 	
 	@Test
@@ -89,17 +92,30 @@ class CourseTest {
 		assertEquals(course_qualidade_teste.getSessions(),course_programacao.getSessions());
 	}
 	
-	@Test
-	public void testEquals() {
-		assertEquals(course_qualidade_teste.equals(user_teacher), true);
-	}
-	
-	/*public String toString() {
-		return "Course[title: \"" + this.title + "\", teacher: \"" + this.teacher.getNickName() + "\", #attenders: " + this.attenders.size() + ", #sessions: " + this.sessions.size() + "]";
+	/*public boolean equals(Object other){
+	    if (other == null) return false;
+	    if (other == this) return true;
+	    if (!(other instanceof Course))return false;
+	    Course otherCourse = (Course)other;
+	    return (otherCourse.id == this.id);
 	}*/
 	@Test
+	public void testEquals() {
+		assertNotNull(this.course_programacao.getCourseDetails());
+		this.course_qualidade_teste.setCourseDetails(null);	
+		assertEquals(this.course_qualidade_teste.equals(null), false);
+		
+		assertEquals(this.course_qualidade_teste.equals(this.course_qualidade_teste), true);	
+				
+		CourseDetails details = courseDetails;
+		this.course_qualidade_teste.setCourseDetails(details);
+		assertEquals(this.course_qualidade_teste.equals(details), this.course_qualidade_teste.getId());	
+	}
+	
+	@Test
 	public void testtToString() {
-		assertEquals(course_qualidade_teste.toString(),this.course_qualidade_teste);
+		String toString = "Course[title: \"" + this.course_programacao.getTitle() + "\", teacher: \"" + this.course_programacao.getTeacher().getNickName() + "\", #attenders: " + this.course_programacao.getAttenders().size() + ", #sessions: " + this.course_programacao.getSessions().size() + "]";
+		assertEquals(this.course_programacao.toString(), toString);
 	}
 	
 }
