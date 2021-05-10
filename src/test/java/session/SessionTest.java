@@ -34,10 +34,10 @@ class SessionTest {
 	
 	@Test
 	public void testId() {
-		assertNotNull(this.session1.getId());
-		int id = 123;
-		this.session1.setId(id);		
-		assertEquals(this.session1.getCourse(), id);
+		assertNotNull(this.course_qualidade_teste.getId());
+		long id = 15;
+		this.course_qualidade_teste.setId(id);
+		assertEquals((long)this.course_qualidade_teste.getId(), id);
 	}
 	
 	@Test
