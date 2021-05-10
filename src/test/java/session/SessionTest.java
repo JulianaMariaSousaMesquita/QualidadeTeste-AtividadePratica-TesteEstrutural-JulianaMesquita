@@ -22,8 +22,10 @@ class SessionTest {
 		
 	@BeforeEach
 	public void testSession() {
-		Course course_qualidade_teste = mock(Course.class);		
+		Course course_qualidade_teste = mock(Course.class);	
+		session1 = mock(Session.class);
 		this.courses = new HashSet<>();
+		
 		courses.add(course_qualidade_teste);		
 		session1.setDate(07052021);
 		session1.setTitle("Qualidade e teste");
