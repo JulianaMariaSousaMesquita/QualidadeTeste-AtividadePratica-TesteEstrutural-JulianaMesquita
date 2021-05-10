@@ -55,9 +55,9 @@ public class UserTest {
 	@Test
 	public void testId() {
 		assertNotNull(this.user.getId());
-		long id = (long) 1.111;
+		long id = 15;
 		this.user.setId(id);
-		assertEquals(this.user.getId(), id);
+		assertEquals((long)this.user.getId(), id);
 	}
 	
 	/*public void setName(String name) {
