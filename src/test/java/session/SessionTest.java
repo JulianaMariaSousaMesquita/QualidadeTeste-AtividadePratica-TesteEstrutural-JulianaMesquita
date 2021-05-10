@@ -34,10 +34,10 @@ class SessionTest {
 	
 	@Test
 	public void testId() {
-		assertNotNull(this.course_qualidade_teste.getId());
+		assertNotNull(this.session1.getId());
 		long id = 15;
-		this.course_qualidade_teste.setId(id);
-		assertEquals((long)this.course_qualidade_teste.getId(), id);
+		this.session1.setId(id);
+		assertEquals((long)this.session1.getId(), id);
 	}
 	
 	@Test
@@ -59,9 +59,9 @@ class SessionTest {
 	@Test
 	public void testDate() {
 		assertNotNull(this.session1.getDate());
-		long date = 07052021;
-		this.session1.setDate(date);		
-		assertEquals(this.session1.getDate(), date);
+		long date = (long) 10052021;
+		this.user.setDate(date);
+		assertEquals(this.session1.getDate(),date);
 	}
 	
 	@Test
