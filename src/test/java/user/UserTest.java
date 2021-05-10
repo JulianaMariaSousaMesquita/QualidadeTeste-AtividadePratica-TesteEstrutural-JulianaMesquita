@@ -149,7 +149,7 @@ public class UserTest {
 		assertFalse(this.user.equals(null));
 		assertFalse(this.user.equals(new Course()));
 		
-		assertTrue(this.user.equals(this.usuarioPreenchido));
+		assertTrue(this.user.equals(this.user));
 		assertTrue(this.user.equals(new User("nome", "senha", "nick", "", "admin", "mod")));
 	}
 	
