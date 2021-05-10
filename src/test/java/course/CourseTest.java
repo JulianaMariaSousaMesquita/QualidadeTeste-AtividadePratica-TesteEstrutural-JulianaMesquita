@@ -74,9 +74,12 @@ class CourseTest {
 	@Test
 	public void testCourseDetails() {	
 		assertNotNull(this.course_programacao.getCourseDetails());
-		CourseDetails details = courseDetails;
-		this.course_qualidade_teste.setCourseDetails(details);		
-		assertEquals(this.course_qualidade_teste.getCourseDetails(), details);
+		
+		CourseDetails novoCourseDetails = mock(CourseDetails.class);
+		this.course_programacao.setCourseDetails(novoCourseDetails);
+		
+		assertEquals(this.course_programacao.getCourseDetails(), novoCourseDetails);
+		
 	}
 	
 	@Test
@@ -101,15 +104,15 @@ class CourseTest {
 	}*/
 	@Test
 	public void testEquals() {
-		assertNotNull(this.course_programacao.getCourseDetails());
-		this.course_qualidade_teste.setCourseDetails(null);	
-		assertEquals(this.course_qualidade_teste.equals(null), false);
+		assertFalse(this.course_qualidade_teste.equals(null));
+		assertFalse(this.course_qualidade_teste.equals(new User()));
+		assertTrue(this.course_qualidade_teste.equals(new Course()));
 		
-		assertEquals(this.course_qualidade_teste.equals(this.course_qualidade_teste), true);	
-				
-		CourseDetails details = courseDetails;
-		this.course_qualidade_teste.setCourseDetails(details);
-		assertEquals(this.course_qualidade_teste.equals(details), this.course_qualidade_teste.getId());	
+		Course copyId = new Course();
+		copyId.setId(this.course_qualidade_teste.getId());
+		
+		assertTrue(this.course_qualidade_teste.equals(copyId));
+	    	assertTrue(this.course_qualidade_teste.equals(this.course_qualidade_teste));
 	}
 	
 	@Test
