@@ -39,15 +39,9 @@ class FileTest {
 		int video = 2;
 		
 		assertEquals(this.file1.getType(), web);
-		assertEquals(this.file1.getType(), pdf);
-		assertEquals(this.file1.getType(), video);
 		
-		assertEquals(this.file2.getType(), web);
 		assertEquals(this.file2.getType(), pdf);
-		assertEquals(this.file2.getType(), video);
 		
-		assertEquals(this.file3.getType(), web);
-		assertEquals(this.file3.getType(), pdf);
 		assertEquals(this.file3.getType(), video);		
 	}
 	
@@ -98,8 +92,9 @@ class FileTest {
 	@Test
 	public void testToString() {
 		String toString = "File[name: \"file3_video.mp4\", id: \"arquivo de video - file 3\", link: \"www.fullteaching/file3.mp4\", indexOrder: 0]";
-		assertEquals(this.file3.toString(), toString);
-		
+		assertNotNull(this.file3.getIndexOrder());
+		this.file3.setIndexOrder(toString);
+		assertEquals(this.file3.toString(), toString);	
 	}
 
 }
