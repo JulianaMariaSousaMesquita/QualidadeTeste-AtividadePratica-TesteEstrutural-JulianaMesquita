@@ -8,9 +8,11 @@ import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertNotNull;
 
 import com.fullteaching.backend.comment.Comment;
 import com.fullteaching.backend.user.User;
+
 
 class CommentTest {
 	private Comment commentParent;
