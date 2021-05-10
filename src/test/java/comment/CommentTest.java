@@ -73,8 +73,6 @@ class CommentTest {
 		String text1 = "Comment[message: \"message comment 3\", author: \"null\", parent: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\", #replies: 0date: \"07052021\"]";
 		String text2 = "Comment[message: \"Testando replies, msg coment2\", author: \"null\", parent: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\", #replies: 0date: \"07052021\"]";
 		assertEquals(this.coment1.toString(), text1);
-		assertEquals(this.coment1.toString(), text2);
-		assertEquals(this.coment2.toString(), text1);
 		assertEquals(this.coment2.toString(), text2);
 	}
 	
