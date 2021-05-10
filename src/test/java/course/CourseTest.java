@@ -47,7 +47,9 @@ class CourseTest {
 
 	@Test
 	public void testId() {
-		long id = course_programacao.getId();
+		long id = 123;
+		assertNull(course_programacao.getId());
+		course_programacao.setId(id);
 		assertEquals(course_programacao.getId(),id);
 	}
 	
