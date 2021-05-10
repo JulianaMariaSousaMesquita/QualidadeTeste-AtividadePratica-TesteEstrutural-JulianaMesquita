@@ -20,9 +20,7 @@ import static org.mockito.Mockito.mock;
 
 public class UserTest {
 	
-	private User user1;
-	private User user2;
-	private UserRepository student1;
+	private User user;
 	private Set<Course> courses;
 	
 	
@@ -47,13 +45,8 @@ public class UserTest {
 		this.courses = new HashSet<>();
 		courses.add(course_qualidade_teste);
 		
-		this.user1 = new User("julianamariasousamesquita@id.uff.br", "123456Ju", "Aluna", "IGNORE"," ");
-		this.user1.setCourses(courses);
-		
-		this.user2 = new User("lenoras@id.uff.br", "124578", "Aluna", "IGNORE"," ");
-		this.user2.setCourses(courses);	
-		
-		this.student1 = (UserRepository) student1.findByName("student1@gmail.com");
+		this.user = new User("nome", "senha", "nick", "", "admin", "mod");
+		this.user.setCourses(courses);
 	}
 	
 	/*public void setId(Long id) {
@@ -61,8 +54,10 @@ public class UserTest {
 	}*/
 	@Test
 	public void testId() {
-		boolean id = student1.existsById((long) 1);
-		assertEquals(id,1);
+		assertNotNull(this.user.getId());
+		long id = (long) 1.111;
+		this.user.setId(id);
+		assertEquals(this.user.getId(), id);
 	}
 	
 	/*public void setName(String name) {
@@ -70,7 +65,7 @@ public class UserTest {
 	}*/
 	@Test
 	public void testName() {
-		assertEquals(this.user1.getName(), "julianamariasousamesquita@id.uff.br");
+		assertEquals(this.user.getName(), "nome");
 	}	
 	
     /*public void setPasswordHash(String passwordHash) {
@@ -78,7 +73,12 @@ public class UserTest {
 	}*/
 	@Test
 	public void testPasswordHash() {
-		assertEquals(this.user2.getPasswordHash(),"124578");
+		String passwordOld = this.user.getPasswordHash();
+		this.user.setPasswordHash("novaSenha");
+		String passwordNew = this.user.getPasswordHash();
+		
+		assertNotEquals(passwordOld, passwordNew);
+		
 	}
 	
 	/*public void setRoles(List<String> roles) {
@@ -86,7 +86,13 @@ public class UserTest {
 	}*/
 	@Test
 	public void testRoles() {
-		assertEquals(this.user1.getRoles()," ");
+		List<String> roles = new ArrayList<>(Arrays.asList("admin", "mod"));
+		assertEquals(this.user.getRoles(), roles);
+		
+		roles.add("user");
+		this.user.setRoles(roles);
+		
+		assertEquals(this.user.getRoles(), roles);
 	}
 	
 	/*public void setNickName(String nickName) {
@@ -94,7 +100,12 @@ public class UserTest {
 	}*/
 	@Test
 	public void testNickName() {
-		assertEquals(this.user2.getNickName(),"Aluna");
+		assertEquals(this.user.getNickName(), "nick");
+		
+		String nickNew = "novoNick";
+		this.user.setNickName(nickNew);
+		
+		assertEquals(this.user.getNickName(), nickNew);
 	}
 	
 	/*public void setPicture(String picture) {
@@ -102,7 +113,12 @@ public class UserTest {
 	}*/
 	@Test
 	public void testPicture() {
-		assertEquals(this.user1.getPicture(), "IGNORE");
+		assertEquals(this.user.getPicture(), "/../images/session_image1.jpg");
+
+		String picUrl = "picture";
+		this.usuarioPreenchido.setPicture(picUrl);
+		
+		assertEquals(this.user.getPicture(), picUrl);
 	}
 	
 	/*public void setRegistrationDate(long registrationDate) {
@@ -110,51 +126,36 @@ public class UserTest {
 	}*/
 	@Test
 	public void testRegistrationDate() {
-		long date = 07052021;
-		this.user1.setRegistrationDate(date);
-		assertEquals(this.user1.getRegistrationDate(),date);
+		assertNotNull(this.user.getRegistrationDate());
+		long date = (long) 10052021;
+		this.user.setRegistrationDate(date);
+		assertEquals(this.user.getRegistrationDate(),date);
 	}
 	
 	/*public void setCourses(Set<Course> courses) {
 		this.courses = courses;
 	}*/
+	
+	void testSetCourses() {
+		assertEquals(courses, this.user.getCourses());
+		
+		courses.add(mock(Course.class));
+		this.user.setCourses(courses);
+		
+		assertEquals(courses, this.user.getCourses());
+	}
 	@Test
-	public void testCourses(Set<Course> courses) {
-		assertEquals(courses, this.user2.getCourses());
+	void testEquals() {
+		assertFalse(this.user.equals(null));
+		assertFalse(this.user.equals(new Course()));
+		
+		assertTrue(this.user.equals(this.usuarioPreenchido));
+		assertTrue(this.user.equals(new User("nome", "senha", "nick", "", "admin", "mod")));
 	}
 	
-	/*@Override
-	public boolean equals(Object other){
-	    if (other == null) return false;
-	    if (other == this) return true;
-	    if (!(other instanceof User))return false;
-	    User otherUser = (User)other;
-	    return ((otherUser.id == this.id) && (otherUser.name.equals(this.name)));
-	}*/
 	@Test
-	public void testEquals() {		
-		assertTrue(this.user1.equals(this.user1));
-		assertTrue(this.user1.equals(this.user2));
-	}
-	
-	/*@Override
-	public int hashCode() {
-	    return name.hashCode();
-	}*/
-	@Test
-	public void testHashCode() {
-		int code = this.user2.hashCode();
-		assertEquals(this.user1.hashCode(),code);		
-	}
-	
-	
-	/*@Override
-	public String toString() {
-		return this.nickName;
-	}*/
-	@Test
-	public void testToString() {
-		assertEquals(this.user2.getNickName(),"Aluna");
+	void testToString() {
+		assertEquals(this.user.getNickName(), this.user.toString());
 	}
 
 	
