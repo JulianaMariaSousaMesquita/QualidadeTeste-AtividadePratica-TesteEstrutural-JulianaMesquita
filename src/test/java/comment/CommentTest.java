@@ -78,7 +78,7 @@ class CommentTest {
 		
 		Comment comment = new Comment();
 		comment.setCommentParent(parent);
-		Assert.notNull(comment);
+		assertNotNull(comment.toString(), comment);
 	}		
 	
 }
