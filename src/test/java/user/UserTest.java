@@ -116,7 +116,7 @@ public class UserTest {
 		assertEquals(this.user.getPicture(), "/../images/session_image1.jpg");
 
 		String picUrl = "picture";
-		this.usuarioPreenchido.setPicture(picUrl);
+		this.user.setPicture(picUrl);
 		
 		assertEquals(this.user.getPicture(), picUrl);
 	}
