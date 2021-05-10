@@ -29,45 +29,65 @@ class SessionTest {
 		courses.add(course_qualidade_teste);		
 		session1.setDate(07052021);
 		session1.setTitle("Qualidade e teste");
-		session1.setDescription("Por mais que se planeje a construção de um software, erros são passíveis de ocorrer. Pode ser um bug num game, uma falha que feche um programa ou um erro que impossibilite você salvar um arquivo.");
+		session1.setDescription("Por mais que se planeje a construÃ§Ã£o de um software, erros sÃ£o passÃ­veis de ocorrer. Pode ser um bug num game, uma falha que feche um programa ou um erro que impossibilite vocÃª salvar um arquivo.");
 		session1.setCourse(course_qualidade_teste);		
 	}
 	
 	@Test
 	public void testId() {
-		long id = session1.getId();
-		assertEquals(session1.getId(),id);		
+		assertNotNull(this.session1.getId());
+		int id = 123;
+		this.session1.setId(id);		
+		assertEquals(this.session1.getCourse(), id);
 	}
 	
 	@Test
 	public void testTitle() {
-		assertEquals(session1.getTitle(),"Qualidade e teste");
+		assertNotNull(this.session1.getTitle());
+		String title = "Qualidade e teste session";
+		this.session1.setTitle(title);		
+		assertEquals(this.session1.getTitle(), title);
 	}
 	
 	@Test
 	public void testDescription() {
-		assertEquals(session1.getDescription(),"Por mais que se planeje a construção de um software, erros são passíveis de ocorrer. Pode ser um bug num game, uma falha que feche um programa ou um erro que impossibilite você salvar um arquivo.");
+		assertNotNull(this.session1.getDescription());
+		String description = "Por mais que se planeje";
+		this.session1.setDescription(description);		
+		assertEquals(this.session1.getDescription(), description);
 	}
 	
 	@Test
 	public void testDate() {
-		assertEquals(session1.getDate(),07052021);
+		assertNotNull(this.session1.getDate());
+		long date = 07052021;
+		this.session1.setDate(date);		
+		assertEquals(this.session1.getDate(), date);
 	}
 	
 	@Test
 	public void testCourse() {
-		assertEquals(session1.getCourse(),course_qualidade_teste);
+		assertNotNull(this.session1.getCourse());
+		Course course = course_qualidade_teste;
+		this.session1.setCourse(course);		
+		assertEquals(this.session1.getCourse(), course);
 	}
 	
 	@Test	
 	public void testEquals() {
-		boolean id = session1.equals(course_qualidade_teste);
-		assertEquals(true,id);
+		assertNotNull(this.session1.getCourse());
+		
+		this.session1.setCourse(null);
+		assertEquals(this.session1.getCourse(), null);//if (other == null) return false;
+		
+		Course course = course_qualidade_teste;
+		this.session1.setCourse(course);		
+		assertEquals(this.session1.getCourse(), course);
 	}
 	
 	@Test
 	public void testToString() {
-		Session session2 = session1;
+		String session2 = "Session[title: \"" + this.session1.getTitle() + "\", description: \"" + this.session1.getDescription() + "\", date: \"" + this.session1.getDate() + "\"]";
 		assertEquals(this.session1, session2);
 	}
 }
