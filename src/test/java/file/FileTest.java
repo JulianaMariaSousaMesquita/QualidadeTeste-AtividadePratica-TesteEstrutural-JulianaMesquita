@@ -26,10 +26,10 @@ class FileTest {
 	@Test
 	public void testId() {
 		assertNotNull(this.file1.getId());
-		long Id = 69;
-		this.file1.setId(Id);
+		long id = 69;
+		this.file1.setId(id);
 		
-		assertEquals(this.file1.getId(), Id);
+		assertEquals(this.file1.getId(), id);
 	}
 	
 	@Test
