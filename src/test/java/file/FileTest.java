@@ -92,9 +92,7 @@ class FileTest {
 	@Test
 	public void testToString() {
 		String toString = "File[name: \"file3_video.mp4\", id: \"arquivo de video - file 3\", link: \"www.fullteaching/file3.mp4\", indexOrder: 0]";
-		assertNotNull(this.file3.getIndexOrder());
-		this.file3.setIndexOrder(toString);
-		assertEquals(this.file3.toString(), toString);	
+		assertEquals(this.file3.toString(), toString);
 	}
 
 }
