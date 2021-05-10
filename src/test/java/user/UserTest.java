@@ -113,7 +113,7 @@ public class UserTest {
 	}*/
 	@Test
 	public void testPicture() {
-		assertEquals(this.user.getPicture(), "/../images/session_image1.jpg");
+		assertEquals(this.user.getPicture(), "/../assets/images/default_session_image.png);
 
 		String picUrl = "picture";
 		this.user.setPicture(picUrl);
