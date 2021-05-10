@@ -44,7 +44,7 @@ class CourseTest {
 		
 		this.course_programacao = new Course("programacao POO", "prog.jpg", this.user_teacher);
 		this.course_qualidade_teste= new Course("qualidade e teste", "quali.jpg", this.user_teacher, this.courseDetails);
-		this.course_bdnc = new Course("title", "image", this.teacher, this.courseDetails);
+		this.course_bdnc = new Course("title", "image", this.user_teacher, this.courseDetails);
 	}
 
 	@Test
