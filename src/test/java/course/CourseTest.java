@@ -30,6 +30,7 @@ class CourseTest {
 	private CourseDetails courseDetails;
 	private Course course_programacao;
 	private Course course_qualidade_teste;
+	private Course course_bdnc;
 	
 	@BeforeEach
 	public void testCourse() {
@@ -43,6 +44,7 @@ class CourseTest {
 		
 		this.course_programacao = new Course("programacao POO", "prog.jpg", this.user_teacher);
 		this.course_qualidade_teste= new Course("qualidade e teste", "quali.jpg", this.user_teacher, this.courseDetails);
+		this.course_bdnc = new Course("title", "image", this.teacher, this.courseDetails);
 	}
 
 	@Test
@@ -73,14 +75,14 @@ class CourseTest {
 	
 	@Test
 	public void testCourseDetails() {	
-		assertNotNull(this.course_programacao.getCourseDetails());
+		assertNotNull(this.course_bdnc.getCourseDetails());
 		
 		CourseDetails novoCourseDetails = mock(CourseDetails.class);
-		this.course_programacao.setCourseDetails(novoCourseDetails);
+		this.course_bdnc.setCourseDetails(novoCourseDetails);
 		
-		assertEquals(this.course_programacao.getCourseDetails(), novoCourseDetails);
-		
+		assertEquals(this.course_bdnc.getCourseDetails(), novoCourseDetails);
 	}
+		
 	
 	@Test
 	public void testAttenders() {
