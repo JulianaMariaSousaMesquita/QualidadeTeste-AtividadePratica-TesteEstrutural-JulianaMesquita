@@ -69,9 +69,25 @@ class CommentTest {
 	}
 	
 	@Test
-	public void testToString() {				
-		String toString = "Comment[message: \"" + this.coment2.getMessage() + "\", author: \"" + this.coment2.getUser() + "\", parent: \"" + this.coment2.getCommentParent() + "\", #replies: " + this.coment2.getReplies() + "date: \"" + this.coment2.getDate() + "\"]";
-		assertEquals(this.coment2.toString(), toString);		
+	public void testToString() {	
+		Comment comentario;
+		Comment comentario2;
+		Comment comentario3;
+		
+		assertThat(comentario2.getId(), notNullValue());
+		assertThat(comentario2.getDate(), equalTo(202020L));
+		assertThat(comentario2.getMessage(), containsString("Mensagem 1 - ola mundo"));
+		assertThat(comentario3.getCommentParent(), equalTo(comentario2));
+		assertThat(comentario3.getReplies(), notNullValue());
+		assertThat(comentario, instanceOf(Comment.class));
+		
+		String toString = "Comment[message: \"null\", author: \"\", parent: \"null\", #replies: 0date: \"0\"]";
+		String toString2 = "Comment[message: \"Mensagem 1 - ola mundo\", author: \"null\", parent: \"null\", #replies: 0date: \"202020\"]";
+		String toString3 = "Comment[message: \"Mensagem 2\", author: \"null\", parent: \"Mensagem 1 - ola mundo\", #replies: 0date: \"20805\"]";
+
+		assertEquals(this.comentario.toString(), toString);
+		assertEquals(this.comentario2.toString(), toString2);
+		assertEquals(this.comentario3.toString(), toString3);
 	}		
 	
 }
