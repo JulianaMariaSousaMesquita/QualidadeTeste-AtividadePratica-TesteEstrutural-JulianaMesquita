@@ -85,9 +85,9 @@ class CommentTest {
 		String toString2 = "Comment[message: \"Mensagem 1 - ola mundo\", author: \"null\", parent: \"null\", #replies: 0date: \"202020\"]";
 		String toString3 = "Comment[message: \"Mensagem 2\", author: \"null\", parent: \"Mensagem 1 - ola mundo\", #replies: 0date: \"20805\"]";
 
-		assertEquals(this.comentario.toString(), toString);
-		assertEquals(this.comentario2.toString(), toString2);
-		assertEquals(this.comentario3.toString(), toString3);
+		assertEquals(comentario.toString(), toString);
+		assertEquals(comentario2.toString(), toString2);
+		assertEquals(comentario3.toString(), toString3);
 	}		
 	
 }
