@@ -41,7 +41,7 @@ class CourseTest {
 		this.sessions = new HashSet<Session>();
 		this.attenders = new HashSet<User>();
 		
-		this.course_programacao = new Course("programacao POO", "prog.jpg", this.user_teacher, this.courseDetails);
+		this.course_programacao = new Course("programacao POO", "prog.jpg", this.user_teacher);
 		this.course_qualidade_teste= new Course("qualidade e teste", "quali.jpg", this.user_teacher, this.courseDetails);
 	}
 
