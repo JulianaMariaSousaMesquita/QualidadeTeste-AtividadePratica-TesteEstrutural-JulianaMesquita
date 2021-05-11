@@ -134,7 +134,7 @@ public class UserTest {
 	
 	/*public void setCourses(Set<Course> courses) {
 		this.courses = courses;
-	}*/
+	}
 	
 	void testSetCourses() {
 		assertEquals(courses, this.user.getCourses());
@@ -143,7 +143,7 @@ public class UserTest {
 		this.user.setCourses(courses);
 		
 		assertEquals(courses, this.user.getCourses());
-	}
+	}*/
 	@Test
 	void testEquals() {
 		assertFalse(this.user.equals(null));
