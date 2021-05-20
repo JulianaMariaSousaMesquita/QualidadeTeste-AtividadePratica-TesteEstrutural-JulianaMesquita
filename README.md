@@ -1,3 +1,14 @@
+## Resultado TESTE ESTRUTURAL
+
+<p align="center"><img src="https://github.com/JulianaMariaSousaMesquita/QualidadeTeste-AtividadePratica-TesteEstrutural-JulianaMesquita/blob/main/TESTE%20ESTRUTURAL%20VERS%C3%83O%20-%20FINAL.jpg/></p>
+
+  
+## Resultado TESTE MUTAÇÃO ANTES DA ATUALIZAÇÃO
+<p align="center"><img src="https://github.com/JulianaMariaSousaMesquita/QualidadeTeste-AtividadePratica-TesteEstrutural-JulianaMesquita/blob/main/antes.jpg></p>
+
+## Resultado TESTE MUTAÇÃO DEPOIS DA ATUALIZAÇÃO
+<p align="center"><img src="https://github.com/JulianaMariaSousaMesquita/QualidadeTeste-AtividadePratica-TesteEstrutural-JulianaMesquita/blob/main/depois.jpg/></p>
+  
 # FullTeaching
 
 [![Build Status](https://travis-ci.org/pabloFuente/full-teaching.png?branch=master)](https://travis-ci.org/pabloFuente/full-teaching)
