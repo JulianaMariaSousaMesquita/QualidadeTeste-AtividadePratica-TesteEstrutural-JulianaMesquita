@@ -1,13 +1,13 @@
 ## Resultado TESTE ESTRUTURAL
 
-<p align="center"><img src="https://github.com/JulianaMariaSousaMesquita/QualidadeTeste-AtividadePratica-TesteEstrutural-JulianaMesquita/blob/main/TESTE%20ESTRUTURAL%20VERS%C3%83O%20-%20FINAL.jpg/></p>
+<p align="center"><img src="https://github.com/JulianaMariaSousaMesquita/QualidadeTeste-AtividadePratica-TesteEstrutural-JulianaMesquita/blob/main/TESTE%20ESTRUTURAL%20VERS%C3%83O%20-%20FINAL.jpg?raw=true/></p>
 
   
 ## Resultado TESTE MUTAÇÃO ANTES DA ATUALIZAÇÃO
-<p align="center"><img src="https://github.com/JulianaMariaSousaMesquita/QualidadeTeste-AtividadePratica-TesteEstrutural-JulianaMesquita/blob/main/antes.jpg></p>
+<p align="center"><img src="https://github.com/JulianaMariaSousaMesquita/QualidadeTeste-AtividadePratica-TesteEstrutural-JulianaMesquita/blob/main/antes.jpg?raw=true></p>
 
 ## Resultado TESTE MUTAÇÃO DEPOIS DA ATUALIZAÇÃO
-<p align="center"><img src="https://github.com/JulianaMariaSousaMesquita/QualidadeTeste-AtividadePratica-TesteEstrutural-JulianaMesquita/blob/main/depois.jpg/></p>
+<p align="center"><img src="https://github.com/JulianaMariaSousaMesquita/QualidadeTeste-AtividadePratica-TesteEstrutural-JulianaMesquita/blob/main/depois.jpg?raw=true></p>
   
 # FullTeaching
 
